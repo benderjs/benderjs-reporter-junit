@@ -36,7 +36,7 @@ module.exports = {
 
 		bender.on( 'client:complete', function( data ) {
 			var className = ( packageName ? packageName + '.' : '' ) +
-				data.client.browser + data.client.version + '.' + data.id,
+				data.client.browser + data.client.version + '.' + data.id.replace( /\.|\?|=/g, '_' ),
 				suite = xml.ele( 'testsuite', {
 					name: className,
 					timestamp: ( new Date() ).toISOString().substr( 0, 19 ),

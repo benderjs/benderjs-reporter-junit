@@ -78,6 +78,8 @@ module.exports = {
 			suite.att( 'failures', failed );
 			suite.att( 'time', ( duration || 0 ) / 1000 );
 		} );
+
+		bender.reporters.add( 'junit', this );
 	},
 
 	detach: function( done ) {
